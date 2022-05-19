@@ -28,6 +28,5 @@ public class Casting3 {
       //byte result = b1 + b2;  // byte + byte > int
         System.out.println('A' + 'B'); //131 : char + char > int
         System.out.println("A" + "B"); //AB  : String + String > String
-
     }
 }

@@ -14,26 +14,6 @@
  +  korean language Pack
  +  Material Theme UI
 
-## 단축키
-+ shift + shift : 검색
-+ ctrl + alt + s  : 설정
-+ alt + 1 : 프로젝트 열기
-+ alt + 1 + 1: 프로젝트 닫기
-+ alt + →, ←: 창 이동
-
-- ctrl + alt + l : 줄 맞춤
-- ctrl + d  : 줄 복사
-- alt + shift + ↑, ↓ :  줄 이동
-- ctrl + shift + f10 : 코드 실행
-
-## 나를 살려줄 단축키
-- ctrl + alt + v : 자동 변수 선언 완성(타입도 자동 판별)
-- alt + ent : 문제 해결 방법을 알려줌
-
-- sout > System.out.println();  (Console.log와 같음)
-- soutb > System.out.println("random = " + random); (윗줄 변수 값을 로그에 보여줌)
-
-
 # 파일 이름은 파스칼 케이스 식별자 규칙을 따른다
 - 맨 앞 단어 대문자, 띄어쓰기 대신 대문자
 - 숫자로 시작
@@ -73,4 +53,8 @@ main 함수: 함수를 호출해서 실행하는 부분
   - 블록 밖 참조 가능
 
 3. 블록 밖에서 선언되어 있는 변수는 블록 안이라도 같은 이름으로 선언 불가.
-   블록 안에서 선언된 변수는 블록 밖에선 삭제되기 때문에 중복 가능
+   블록 안에서 선언된 변수는 블록 밖에선 삭제되기 때문에 중복 가능.  
+
+4. 내가 선언 하려는 변수의 타입을 모르겠으면
+ + 오라클에서 제공하는 라이브러리 참조
+ + 혹은 ctrl + alr + v
