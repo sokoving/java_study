@@ -2,7 +2,8 @@
  + ctrl + alt + v : 자동 변수 선언 완성(타입도 자동 판별)
  + ctrl + alt + t : 드래그한 범위를 감싸는 문 만들기
  
- + alt + ent : 문제 해결 방법을 알려줌  
+ + alt + ent : 문제 해결 방법을 알려줌
+   - 블록으로 감싼 영역을 루프로 바꿀 수 있음
   
  + sout : System.out.println();
   - Console.log와 같음
