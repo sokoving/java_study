@@ -5,16 +5,19 @@ import java.util.Arrays;
 public class ArrayCopy {
     public static void main(String[] args) {
 
-        // 배열 짭복사
-/*      String[] pets = {"멍멍이", "짹짹이", "삐약이"};
-        String[] petsCopy = pets; // 배열의 사본 X, 데이터 주소를 복사 > 데이터 동기화돼 있음
-        System.out.println("원본배열 주소: " + pets);
-        System.out.println("사본배열 주소: " + petsCopy);
+        // 배열 가짜 복사
+        String[] foods = {"짜장면", "짬뽕", "탕수육"};
+        String[] foodsCopy = foods; 
+            // 배열의 데이터를 복사해 사본을 만든 것이 아니라 같은 주소를 이름만 달리 부르고 있는 것
+        System.out.println("원본배열 주소: " + foods);
+        System.out.println("사본배열 주소: " + foodsCopy);
 
-        pets[1] = "어흥이";
-        petsCopy[0] = "어흥이";
-        System.out.println("원본배열: " + Arrays.toString(pets));
-        System.out.println("사본배열: " + Arrays.toString(petsCopy));*/
+        foods[1] = "김치";
+        foodsCopy[0] = "치즈";
+        System.out.println("원본배열: " + Arrays.toString(foods));
+        System.out.println("사본배열: " + Arrays.toString(foodsCopy));
+
+        System.out.println("==================================");
 
         // 배열 복사 알고리즘
         String[] pets = {"멍멍이", "짹짹이", "삐약이"};
@@ -31,13 +34,11 @@ public class ArrayCopy {
             petsCopy[i] = pets[i];
         }
 
-        // sout
         System.out.println("원본배열 주소: " + pets);
         System.out.println("사본배열 주소: " + petsCopy);
 
         System.out.println("원본배열: " + Arrays.toString(pets));
         System.out.println("사본배열: " + Arrays.toString(petsCopy));
-
 
 
     }
