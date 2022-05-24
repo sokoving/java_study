@@ -15,11 +15,15 @@
   - printf() > js의 `${}`와 같은 기능 <br>
   - 포맷 지정자
     + %d : 10진수 정수
+      - %-4d : 4자리를 점유하며 출력한다(칸 맞춤, 탭과 비슷)
     + %f: 실수
+      - %.3f: 소수점 3자리까지 출력
+      - % 쓰려면 %%
     + %s: 문자열
     + %c: 단일문자
   - 쉼표(,) 뒤에 전달할 인수(변수)를 순서대로 쓴다.
 
++ iter : 강화된 for문
 
 # Scanner
  
@@ -40,7 +44,8 @@
 
 
 # 단축키
-+ shift + shift : 검색
++ shift + shift : 통합검색(파일이름도 검색 됨)
++ ctrl + e : 최근에 열어봤던 파일 목록
 + ctrl + alt + s  : 설정
 + alt + 1 : 프로젝트 열기
 + alt + 1 + 1: 프로젝트 닫기
@@ -54,4 +59,13 @@
 - ctrl + shift + f10 : 코드 실행
 
 + ctrl + shift + / : 블록 주석
+
+# 문자열 특정 단일문자 취득
+String s = "OOXXXOOXX"; <br>
+// 문자열 특정 단일문자 취득 <br>
+System.out.println(s.charAt(0)); <br>
+System.out.println(s.charAt(2)); <br><br>
+
+// 문자열 길이 구하기 <br>
+System.out.println(s.length()); <br>
 
