@@ -4,7 +4,10 @@
  
  + alt + ent : 문제 해결 방법을 알려줌
    - 블록으로 감싼 영역을 루프로 바꿀 수 있음
-  
+
+ + iter : 강화된 for문
+
+# System.out.print
  + sout : System.out.println();
   - Console.log와 같음
 
@@ -23,7 +26,6 @@
     + %c: 단일문자
   - 쉼표(,) 뒤에 전달할 인수(변수)를 순서대로 쓴다.
 
-+ iter : 강화된 for문
 
 # Scanner
  

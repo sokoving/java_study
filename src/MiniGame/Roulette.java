@@ -60,10 +60,14 @@ public class Roulette {
         System.out.println("비밀" + Arrays.toString(cylinder));
 
         // 5. 시작할 사람 고르기 (idx: 0~ players.length-1)
-//         int startNum = (int) (Math.random() * (players.length - 1);
-//        System.out.printf("총을 돌렸습니다. %s부터 시작합니다.", players[0]);
+        int startNum = (int) (Math.random() * (players.length - 1));
+        System.out.printf("총을 돌렸습니다. %s부터 시작합니다.", players[0]);
+        System.out.println();
+        System.out.printf("[%s님의 턴!] 탄창 실린더를 무작위로 돌립니다.\n", players[0]);
+        String gameStart = " ";
+        System.out.println(gameStart);
 
-        //
+
 
         sc.close();
     }
