@@ -5,6 +5,9 @@
  + alt + ent : 문제 해결 방법을 알려줌
    - 블록으로 감싼 영역을 루프로 바꿀 수 있음
 
+ + alt + insert :(생성자 선언) 선택한 필드(ctrl + click)의 초기화 양식 자동완성
+ + ctrl + p : (생성자 호출) 입력할 인수 보기
+
  + iter : 강화된 for문
 
 # System.out.print
@@ -27,23 +30,6 @@
   - 쉼표(,) 뒤에 전달할 인수(변수)를 순서대로 쓴다.
 
 
-# Scanner
- 
-## package 와 public class 사이에 
-+ import java.util.Scanner;
-
-## 스캐너 api 사용
-+ Scanner sc = new Scanner(System.in);
-
-## 스캐너의 함수들
- + sc.next(): 문자열을 입력받을 때, 공백 미포함 (공백 전까지만 반환)
- + sc.nextLine(): 문자열 입력, 공백 포함
- + sc.nextInt(): 정수를 입력, 공백 미포함 (공백 전까지만 반환)
- + sc.nextDouble(): 실수를 입력
-
-## 스캐너 메모리 해제
- + sc.close(); 
-
 
 # 단축키
 + shift + shift : 통합검색(파일이름도 검색 됨)
@@ -57,17 +43,9 @@
 - ctrl + d  : 줄 복사
 - alt + shift + ↑, ↓ :  줄 이동
 + ctrl + shift + ↑ : 위 문에 중첩시키기
-+ 
+
 - ctrl + shift + f10 : 코드 실행
 
 + ctrl + shift + / : 블록 주석
 
-# 문자열 특정 단일문자 취득
-String s = "OOXXXOOXX"; <br>
-// 문자열 특정 단일문자 취득 <br>
-System.out.println(s.charAt(0)); <br>
-System.out.println(s.charAt(2)); <br><br>
-
-// 문자열 길이 구하기 <br>
-System.out.println(s.length()); <br>
 

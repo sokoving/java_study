@@ -1,6 +1,4 @@
-package BaekJoon.Method;
-
-import java.util.Arrays;
+package CordingTest.BJ05_Fungtion;
 
 public class Quiz02 {
 
