@@ -1,4 +1,4 @@
-package day03;
+package cordingtest.backjoon.bj02_if;
 
 import java.util.Scanner;
 

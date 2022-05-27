@@ -1,4 +1,4 @@
-package CordingTest.BJ05_Fungtion;
+package cordingtest.backjoon.bj05_Fungtion;
 
 public class Quiz02 {
 

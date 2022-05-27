@@ -37,7 +37,10 @@
 
 + replace(old, new); 문자열 내부에 모든 old문자를 탐색하여 new문자로 변경
 
-+ 문자열 타입 변환
+
+# 타입 변환
   - 문자열 -> 정수 : Integer.parseInt(str)
   - 문자열 -> 실수 : Double.parseDouble(str)
-  -  ??   -> 문자열 : String.valueOf(data)
+  - ??   -> 문자열 : String.valueOf(data)
+
+  - char > int : Character.getNumericValue(char)
