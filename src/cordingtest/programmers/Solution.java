@@ -1,31 +1,26 @@
 package cordingtest.programmers;
-//https://programmers.co.kr/learn/courses/30/lessons/12901
+
+// https://programmers.co.kr/learn/courses/30/lessons/81301
 public class Solution {
-    public static String solution(int a, int b) {
-        String answer = "";
+    public static int solution(String s) {
+        int answer = 0;
+        String[] nums = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-
-        // 월별 일수 배열 index+1 = a
-        int[] monthDay = new int[] {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-        int dayDay = 0;
-        for (int i = 0; i < a-1 ; i++) {
-            dayDay += monthDay[i];
+        for (int i = 0; i < nums.length; i++) {
+            s = s.replaceAll(nums[i], String.valueOf(i));
         }
-        dayDay += b;
 
-        int dayWeek = dayDay % 7;
-
-        // 요일 배열
-        String[] weeks = {"THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"};
-
-        answer = weeks[dayWeek];
-
+        answer = Integer.parseInt(s);
         return answer;
     }
 
     public static void main(String[] args) {
-        System.out.println(solution(12, 31));
+        System.out.println(">> " + solution("one4seveneight"));
+        System.out.println(">> " + solution("23four5six7"));
+        System.out.println(">> " + solution("2three45sixseven"));
+        System.out.println(">> " + solution("123"));
+
+
     }
 
 }
