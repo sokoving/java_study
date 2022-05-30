@@ -1,7 +1,5 @@
 package day09.objarr;
 
-import java.util.Arrays;
-
 public class Bank {
 
 //     필드

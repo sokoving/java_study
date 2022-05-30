@@ -29,13 +29,26 @@
 ```  Person park = new Person("박영희");     Bank woori = new Bank("우리", 20);
      park.money = 100000;                   kim.money = 5000;
      
-        | shinhan |----→|    Bank(100)   |                ┌-------| woori |
-        |  (100)  |     | bankname|신한   |                ↓       | (200) |
-  |                    ┌| accounts|(150) |         |    Bank(200)   |
-                       || count   |0     |         | bankname|우리   |
-                       |                          ┌| accounts|(220) |
-                       |  (150)                   || count   |0     |
-                       └→ [][][][][][][][][][]    |
-| park |                                          | (220)
-|(700) |                                          └→ [][][][][][][][][][][][][][][][][][][][]
+        | shinhan |----→|    Bank(100)   |                ┌-------| woori |     ┌→|Person(400) |
+        |  (100)  |     | bankname|신한   |                ↓       | (200) |     | |name |김철수 |
+                        ┌| accounts|(150) |         |    Bank(200)   |          | |money|5000  |
+┌→|Person(300) |        || count   |0     |         | bankname|우리   |          | |myAcc|null  |
+| |name |박영희 |        |                          ┌| accounts|(220) |           └--┐
+| |money|100000|        |  (150)                   || count   |0     |          | kim |
+| |myAcc|null  |        └→ [][][][][][][][][][]    |                            |(400) |
+└--┐                                               | (220)
+| park |                                           └→ [][][][][][][][][][][][][][][][][][][][]
+|(300) |
+```
+```park.makeAccount(shinhan);               kim.makeAccount(woori);
+        | shinhan |----→|    Bank(100)   |                ┌-------| woori |     ┌→|Person(400) |
+        |  (100)  |     | bankname|신한   |                ↓       | (200) |     | |name |김철수 |
+                        ┌| accounts|(150) |         |    Bank(200)   |          | |money|5000  |
+┌→|Person(300) |        || count   |0     |         | bankname|우리   |          | |myAcc|null  |
+| |name |박영희 |        |                          ┌| accounts|(220) |           └--┐
+| |money|100000|        |  (150)                   || count   |0     |          | kim |
+| |myAcc|null  |        └→ [][][][][][][][][][]    |                            |(400) |
+└--┐                                               | (220)
+| park |                                           └→ [][][][][][][][][][][][][][][][][][][][]
+|(300) |
 ```

@@ -1,7 +1,7 @@
-package cordingtest.programmers;
+package cordingtest.programmers.level1;
 
 // https://programmers.co.kr/learn/courses/30/lessons/81301
-public class Solution {
+public class 숫자_문자열과_영단어 {
     public static long solution(String s) {
         long answer = 0;
 

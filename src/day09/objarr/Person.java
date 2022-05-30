@@ -1,9 +1,5 @@
 package day09.objarr;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-
 public class Person {
 
 //    필드
