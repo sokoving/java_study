@@ -37,6 +37,8 @@
 
 + replace(old, new); 문자열 내부에 모든 old문자를 탐색하여 new문자로 변경
 
++ String.format(); 인수로 준 값을 문자열로 리턴
+  - String.format("이름: %s / 과목: %s", name, subject);
 
 # 타입 변환
   - 문자열 -> 정수 : Integer.parseInt(str)
