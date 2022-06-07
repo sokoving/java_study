@@ -59,4 +59,4 @@
 - 역할에 맞는 일을 하게 하자
 - Member > 멤버 데이터 저장
 - MemberController > 멤버 데이터 조작
-- MemberMenu > 조회?
+- MemberMenu > 출력을 담당
