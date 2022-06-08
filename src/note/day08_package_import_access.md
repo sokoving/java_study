@@ -33,11 +33,11 @@
 ```
 + public : 범용(거의 모든 클래스) 
            Same Class, Same Package, Other Package&Subclass, Other Package(Universe)
-# protected : ??(강의 듣고 다시 쓰기)
+# protected : 같은 패키지와 상속자까지만
             Same Class, Same Package, Other Package&Subclass
 ~ default : 같은 패키지까지만(생략 가능)
            Same Class, Same Package 
-- private : 해당 클래스에서만
+- private : 해당 클래스에서만(상속 제외)
            Same Class 
 ```
 ## 3-2 클래스에 접근제한자를 붙이기(defalt)
@@ -45,3 +45,9 @@
 - public과 default 두 가지만 가능
 - 필드, 생성자, 메서드에 public이 붙어 있어도 적용 X
 - 세부적으로 조정하기 위해서는 데이터에 개별적으로 붙여야 한다.
+
+## 디폴트와 프로텍티드
+- 기본적으로  다른 패키지에서 사용할 수 없게 만드는 접근제한자지만
+- 프로텍티드는 다른 패키지라도 상속받으면 사용할 수 있지만 
+- 디폴트는 다른 패키지면 상속받아도 사용 못 함
+> 디폴트 말고 프로텍티드 써라

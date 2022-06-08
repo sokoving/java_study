@@ -72,6 +72,7 @@ public class Member {                      >> class명 (파스칼케이스)
 - new 연산자와 같이 사용해서 객체 생성, 필드 초기화
 > Member kim = new Member();
 - 함수랑 비슷하게 생겼는데 이름이 class랑 똑같음
+- 리턴 타입 없음
 - 생성자가 호출되면 객체가 생성되며(Heap) 그 주소값이 리턴된다
 - alr + insert로 편하게 선언할 수 있다
 ### 4-1. 생성자 선언
