@@ -40,9 +40,18 @@
 + String.format(); 인수로 준 값을 문자열로 리턴
   - String.format("이름: %s / 과목: %s", name, subject);
 
+----------------------------------------------------------------------
+
 # 타입 변환
   - 문자열 -> 정수 : Integer.parseInt(str)
   - 문자열 -> 실수 : Double.parseDouble(str)
   - ??   -> 문자열 : String.valueOf(data)
 
   - char > int : Character.getNumericValue(char)
+
+
+----------------------------------------------------------------------
+
+# Arrays
++ 정렬
+  - Arrays.sort(arr);

@@ -8,31 +8,28 @@ public class 투_포인터_02 {
     public static void main(String[] args) {
 
 
-        int[] arr = {2, 7, 4, 1, 5, 3};
+        int[] arr = {1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10};
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));  //[1, 2, 3, 4, 5, 7]
 
         int N = arr.length; //수의 개수
-        int M = 9; // 찾아야 하는 수
+        int M = 10; // 찾아야 하는 수
         int start = 0;
         int end = arr.length-1;
-        int T = arr[start] + arr[end]; // 두 수를 더한 수
         int count = 0; // 같은 수를 찾으면 올라간다
 
         while (start < end) {
+            int T = arr[start] + arr[end]; // 두 수를 더한 수
             System.out.printf("start : %d | end : %d | T : %d\n", arr[start], arr[end], T);
             if(M > T){
                 start++;
-                T = arr[start] + arr[end];
             } else if (M < T){
                 end--;
-                T = arr[start] + arr[end];
             } else {
                 count++;
                 System.out.println("count = " + count + "\n===========");
                 start++;
                 end--;
-                T = arr[start] + arr[end];
             }
         }
 
