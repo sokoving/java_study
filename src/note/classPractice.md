@@ -60,3 +60,12 @@
 - Member > 멤버 데이터 저장
 - MemberController > 멤버 데이터 조작
 - MemberMenu > 출력을 담당
+
+# 프로그램 종료 시에는 
+```
+System.out.println("프로그램을 종료합니다.");
+System.exit(0); // 프로세스 종료
+break;
+
+아니면 return;
+```

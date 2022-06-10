@@ -1,3 +1,7 @@
+# 사용 예시 참고
+- package com.kh.practice.chap01_poly.controller.LibraryController
+- searchBook();
+
 # 스택과 큐는 리스트와 달리 중간 삭제, 삽입이 없다
 
 # 스택(stack)
@@ -11,4 +15,6 @@
 
 # 큐(queue)
 - 자료를 줄지어 연결해놓은 형태
-- 
+
+# 추가 바람
+DEQUE : DOUBLE-ENDED QUEUE

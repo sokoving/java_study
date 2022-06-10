@@ -6,6 +6,7 @@ public class Hunter extends Player {
 
     public Hunter(String name){
         super(name);
+        this.job = "사냥꾼";
         this.arrow = 100;
     }
 
