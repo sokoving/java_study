@@ -1,10 +1,10 @@
-package cordingtest.programmers;
+package cordingtest.programmers.level1;
 
 import utill.Utill;
 
 import java.util.Arrays;
 
-public class Solution {
+public class K번째수 {
 
     public static int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
