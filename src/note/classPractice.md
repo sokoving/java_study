@@ -15,6 +15,9 @@
 - : private
     해당 클래스
 굵은 글씨 : 상수
+
+실선 화살표 : extends
+점선 화살표 : implements
 ```
 
 ## 2-2. + CUT_LINE : int = 60 (상수) 

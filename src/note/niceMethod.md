@@ -54,4 +54,4 @@
 
 # Arrays
 + 정렬
-  - Arrays.sort(arr);
+  - Arrays.sort(arr); (시간복잡도 nlogn, 퀵소트)

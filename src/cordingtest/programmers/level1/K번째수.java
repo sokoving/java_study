@@ -1,5 +1,6 @@
 package cordingtest.programmers.level1;
 
+import day08.modi.pac2.C;
 import utill.Utill;
 
 import java.util.Arrays;
@@ -8,23 +9,29 @@ public class K번째수 {
 
     public static int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
+        // 2차원 배열을 반복하여 결과를 하나씩 추출
+        for (int i = 0; i < commands.length; i++) {
+            int a = commands[i][0]-1;  //배열 슬라이싱 시작 인덱스
+            int b = commands[i][1];   // 배열 슬라이싱 끝 인덱스
+            int c = commands[i][2];
 
-        for (int a = 0; a < commands.length; a++) {
-            int i = commands[a][0];
-            int j = commands[a][1];
-            int k = commands[a][2];
-
-            int[] temp = new int[j-i+1];
+            // 배열 슬라이싱
+            int[] sliceArr = new int[b-a];
             int idx = 0;
-            for (int l = i-1; l < j ; l++) {
-                temp[idx++] = array[l];
+            for (int l = a; l < b ; l++) {
+                sliceArr[idx++] = array[l];
             }
+/*            for (int j = 0; j < b-a; j++) {
+                sliceArr[j] = array[j+a];
+            }
+*/
 
-            Arrays.sort(temp);
+            // 오름차 정렬
+            Arrays.sort(sliceArr);
 
-            System.out.println(Arrays.toString(temp));
+            System.out.println(Arrays.toString(sliceArr) + " " + commands[i][2] + "번째 수 ");
 
-            answer[a] = temp[k-1];
+            answer[i] = sliceArr[c-1];
 
         }
         Utill.shortline();
