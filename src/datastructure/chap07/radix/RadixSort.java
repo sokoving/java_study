@@ -10,7 +10,7 @@ import java.util.Queue;
 public class RadixSort {
 
 
-    private static void sort(int[] arr) {
+    public static void sort(int[] arr) {
 
         // 최대 자릿수 구하기
         int digit = 0;
@@ -20,7 +20,7 @@ public class RadixSort {
                 digit = leng;
             }
         }
-        System.out.println("digit = " + digit);
+//        System.out.println("digit = " + digit);
 
         // 각 자릿수 숫자에 맞는 큐 10개 생성
         Queue<Integer>[] queues = new Queue[10];
@@ -53,7 +53,7 @@ public class RadixSort {
                     arr[k++] = q.poll(); // 뽑아서 배열에 새로 넣고 인덱스++ 한다
                 }
             }
-            System.out.println(Arrays.toString(arr));
+//            System.out.println(Arrays.toString(arr));
 
         } // end outer for(digit)
 

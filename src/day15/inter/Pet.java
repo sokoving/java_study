@@ -12,5 +12,12 @@ public interface Pet {
     public static final String PLAY_GROUND = "애완동물 카페"; // 애동이 노는 데
 
     public abstract void play();        // 애동이 노는 기능
+    
+    public static void m1(){
+        System.out.println("Pet m1 호출");
+    }
+
+    default void m2(){};
+
 
 }

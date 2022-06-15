@@ -19,3 +19,10 @@
  - 논리 연산자를 쓸 수 없다. 
    + 표현 못 하는 조건이 있을 수 있다
 
+# for(;;)
+- 포문의 무한루프
+- whild(true)랑 같음
+
+# for (int i = 0; 조건식; i++)
+- i의 크기 비교 말고 true/false가 나오는 조건식이면 다 됨
+- for (int i = 0; st2.hasMoreTokens(); i++) 됨 
