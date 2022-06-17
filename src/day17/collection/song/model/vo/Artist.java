@@ -1,8 +1,9 @@
 package day17.collection.song.model.vo;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Artist {
+public class Artist implements Serializable {
 
     private String name; // 가수명
     private List<String> songs; // 노래 목록

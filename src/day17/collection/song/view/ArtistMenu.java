@@ -19,6 +19,8 @@ public class ArtistMenu {
     }
 
     public void mainMenu() {
+        ac.makeDirectory();
+        ac.load();
         while (true) {
             System.out.println("\n\n**** 음악 관리 프로그램 ****");
             System.out.printf("# 현재 등록된 가수: %d명\n", ac.count());
@@ -80,6 +82,7 @@ public class ArtistMenu {
                 System.out.printf("# [%s]은(는) 이미 등록된 노래입니다\n", song);
             }
         }
+        ac.save();
 }
 
     public void searchMusic() {

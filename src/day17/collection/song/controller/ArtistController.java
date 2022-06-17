@@ -2,35 +2,37 @@ package day17.collection.song.controller;
 
 import day17.collection.song.model.vo.Artist;
 
+import java.io.*;
 import java.util.*;
 
 public class ArtistController {
 
     //key는 가수명을 사용
-    private final Map<String, Artist> artitstMap;
+    private Map<String, Artist> artitstMap;
     private static ArtistController ac;
+
     static {
         ac = new ArtistController();
     }
 
-    private ArtistController(){
+    private ArtistController() {
         artitstMap = new HashMap<>();
     }
 
     // 싱글턴 객체 반환
-    public static ArtistController getInstance(){
+    public static ArtistController getInstance() {
         return ac;
     }
 
     // list를 set으로 변환
-    public Set<String> convert(List<String> list){
+    public Set<String> convert(List<String> list) {
         Set<String> set = new HashSet<>();
         set.addAll(list);
         return set;
     }
 
     // 가수 신규 등록 기능
-    public void insertNewArtist(Artist artitst){
+    public void insertNewArtist(Artist artitst) {
         artitstMap.put(artitst.getName(), artitst);
     }
 
@@ -50,20 +52,60 @@ public class ArtistController {
         return result;
     }
 
-        // 가수가 등록되어 있는지 유무 확인
-    public boolean isRegister(String artistName){
+    // 가수가 등록되어 있는지 유무 확인
+    public boolean isRegister(String artistName) {
         return artitstMap.containsKey(artistName);
     }
 
     // 등록된 가수의 수 반환
-    public int count(){
+    public int count() {
         return artitstMap.size();
     }
 
     // 특정 가수 노래 목록 반환
-    public List<String> getSongList(String artistName){
+    public List<String> getSongList(String artistName) {
         return artitstMap.get(artistName).getSongs();
     }
 
+    // 세이브 파일 저장할 디렉토리 생성
+    public void makeDirectory() {
+        File dir = new File("E:/music");
+        if (!dir.exists()) dir.mkdirs();
+    }
+
+    // 세이브기능
+    public void save() {
+        try (ObjectOutputStream oos
+                     = new ObjectOutputStream(new FileOutputStream("E:/music/m.sav"))) {
+
+            oos.writeObject(artitstMap);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 로드 기능
+    public void load() {
+
+        File file = new File("E:/music/m.sav");
+
+        if (file.exists()) {
+            try (ObjectInputStream ois
+                         = new ObjectInputStream(new FileInputStream("E:/music/m.sav"))) {
+
+                artitstMap = (Map<String, Artist>) ois.readObject();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

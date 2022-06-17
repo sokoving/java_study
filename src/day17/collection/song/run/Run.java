@@ -7,5 +7,8 @@ public class Run {
         ArtistMenu am = new ArtistMenu();
         am.mainMenu();
 
+
+
+
     }
 }

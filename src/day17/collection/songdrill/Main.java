@@ -1,6 +1,4 @@
-package day17.collection.drill;
-
-import com.kh.practice.student.controller.StudentController;
+package day17.collection.songdrill;
 
 import java.util.HashSet;
 import java.util.Scanner;
