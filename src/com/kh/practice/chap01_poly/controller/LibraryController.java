@@ -9,7 +9,7 @@ public class LibraryController {
     private Member mem; // 회원 정보 (null로 명시초기화)
     private Book[] bList; // 모든 책 정보 (크기 5 할당)
 
-    // 필요한 상수 선언
+    // 필요한 상수 선언 (enum으로 빼내도 됨)
     public static final int RENT_FAIL = 1;
     public static final int RENT_SUCCESS = 0;
     public static final int RENT_SUCCESS_WITH_COUPON = 2;

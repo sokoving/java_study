@@ -66,6 +66,14 @@ public class Member {                      >> class명 (파스칼케이스)
 - 클래스 블록 안
 - 메서드, 생성자 블록에서는 불가능
 - 메서드, 생성자 블록에서 생성된 건 지역 변수(필드X)
+### 3-3. 열거형 필드
+- day19.lambda.Apple
+>    enum Color { RED, GREEN }  
+>    private Color color;
+- enum
+- 외부, 내부 클래스 다 됨
+- 외부 클래스로 뺄시 임포트로 풀경로 안 써도 되게 할 수 있음
+- Color color에 enum에 있는 것만 지정할 수 있게 됨
 
 ## 4. 생성자(constructor)
 > Member(){}
