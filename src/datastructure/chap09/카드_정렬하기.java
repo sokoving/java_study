@@ -1,38 +1,30 @@
 package datastructure.chap09;
 
-import java.util.LinkedList;
 import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.Scanner;
 
 // 백준 1715번
 public class 카드_정렬하기 {
     public static void main(String[] args) {
 
-        // 우선순위 큐
-        PriorityQueue<Integer> cardList = new PriorityQueue<>();
-        cardList.offer(10);
-        cardList.offer(20);
-        cardList.offer(40);
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(); // 카드 묶음 수
 
-        System.out.println(cardList);
+        // 우선순위 큐 : 데이터가 삽입될 때 자동 오름차 정렬된다
+        PriorityQueue<Integer> cardList = new PriorityQueue<>();
+        for (int i = 0; i < N; i++) {
+            cardList.add(sc.nextInt());
+        }
 
         int total = 0;
 
-        Integer n1 = cardList.poll();
-        Integer n2 = cardList.poll();
-        int e = n1 + n2;
-        total += e;
-        cardList.offer(e);
-        System.out.println(cardList);
-
-        n1 = cardList.poll();
-        n2 = cardList.poll();
-        e = n1 + n2;
-        total += e;
-        cardList.offer(e);
-        System.out.println(cardList);
-
-        System.out.println("total = " + total);
+        while (cardList.size() != 1) {
+            int data1 = cardList.poll();
+            int data2 = cardList.poll();
+            total += data1 + data2;
+            cardList.offer(data1 + data2);
+        }
+        System.out.println(total);
 
 
     }
