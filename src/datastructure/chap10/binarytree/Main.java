@@ -2,6 +2,9 @@ package datastructure.chap10.binarytree;
 
 import utill.Utill;
 
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 public class Main {
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
@@ -41,5 +44,46 @@ public class Main {
         System.out.println(tree.findMin());
         Utill.msgLine("최댓값");
         System.out.println(tree.findMax());
+
+        Utill.msgLine("트리 출력");
+        tree.display();
+
+
+        // 데이터가 치우쳐지면 트리의 장점이 없어진다
+        Utill.msgLine("트리의 문제점");
+        BinaryTree binaryTree2 = new BinaryTree();
+        binaryTree2.add(1);
+        binaryTree2.add(2);
+        binaryTree2.add(50);
+        binaryTree2.add(27);
+        binaryTree2.add(30);
+        binaryTree2.add(77);
+        binaryTree2.add(3);
+        binaryTree2.add(3);
+
+        binaryTree2.display();
+
+        Utill.msgLine("트리의 자바 API : TreeSet");
+        // TreeSet : Set 형태로 tree를 구현(중복 없음)
+        TreeSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(50);
+        treeSet.add(77);
+        treeSet.add(27);
+        treeSet.add(7);
+        treeSet.add(67);
+        System.out.println(treeSet.toString());
+
+        Utill.msgLine("트리의 자바 API : TreeMap");
+        // TreeMap : Map 형태로 tree를 구현(키값으로 데이터 찾음)
+        TreeMap<String, Integer> treeMap = new TreeMap<>();
+        treeMap.put("멍멍이", 30);
+        treeMap.put("명명이", 35);
+        treeMap.put("냥냥이", 40);
+        treeMap.put("낭낭이", 10);
+        System.out.println(treeMap.toString());
+
+
+
+
     }
 }

@@ -1,5 +1,7 @@
 package datastructure.chap10.binarytree;
 
+import java.util.Stack;
+
 class Node {
     private int data; // 트리에 저장할 데이터
     private Node leftChild; // 왼쪽 자식
@@ -60,7 +62,7 @@ public class BinaryTree {
         // 삽입할 데이터 노드 생성
         Node newNode = new Node(data);
 
-        //빈 트리면 새로운 노드를 루트로 지정
+        // 빈 트리면 새로운 노드를 루트로 지정
         if (root == null) {
             root = newNode;
         } else {
@@ -84,28 +86,24 @@ public class BinaryTree {
                         return;
                     }
                 }
-
-
             }
         }
-
     }
 
 
+
     //============================= 순회 =============================//
-    /* 전위 순회(pre order) > 중전후
+    /*
       1. 중앙 노드 값을 출력
       2. 중앙 노드의 왼쪽 자식을 중앙노드로 삼고 재귀 호출
        더이상 자식이 없을 때까지 반복
        3. 왼쪽 자식 재귀 호출이 끝나면 오른쪽 자식 재귀 호출
     */
+    // 전위 순회(pre order) > 중전후
     public void preOrder(Node tempRoot) {
         if (tempRoot != null) {
-            // 1. 중앙 노드 값을 출력
             System.out.printf("%d ", tempRoot.getData());
-            // 2. 중앙 노드의 왼쪽 자식을 중앙노드로 삼고 재귀 호출
             preOrder(tempRoot.getLeftChild());
-            // 3. 왼쪽 자식 재귀 호출이 끝나면 오른쪽 자식 재귀 호출
             preOrder(tempRoot.getRightChild());
         }
     }
@@ -130,9 +128,11 @@ public class BinaryTree {
 
 
     //============================= 탐색 =============================//
+
     public Node find(int targetData) {
+
         Node current = root;
-        // current의 데이터가 target과 같을 때 탐색 종료
+
         while (true) {
             if (current == null) return null; // 탐색 실패
 
@@ -145,20 +145,19 @@ public class BinaryTree {
                 return current; // 탐색 성공
             }
         }
+
     }
 
+    //============ 최대, 최소값 탐색 =================//
     public Node findMin() {
         if (isEmpty()) return null; // 탐색 실패
 
         Node current = root;
-        // 커런트의 왼쪽 자식이 없으면 커런트가 최소값
         while (current.getLeftChild() != null) {
-            // 커런트 왼쪽 자식 있으면 커런트를 왼쪽자식으로
             current = current.getLeftChild();
         }
         return current;
     }
-
     public Node findMax() {
         if (isEmpty()) return null; // 탐색 실패
 
@@ -256,13 +255,13 @@ public class BinaryTree {
         Node candidateParent = deleteNode;
         Node candidate = candidateParent.getRightChild();
 
-        // 삭제노드 오른족 자식의 왼쪽 자식 찾기
+        // 삭제노드 오른쪽 자식의 왼쪽 자식 찾기
         while (candidate.getLeftChild() != null) {
             candidateParent = candidate;
             candidate = candidate.getLeftChild();
         }
 
-        // 후보노드가 삭제노드 오른쪽 자식의 왼쪽자식일 때
+        // 후보노드가 삭제노드 왼쪽자식일 때
         if (candidate != deleteNode.getRightChild()) {
             candidateParent.setLeftChild(candidate.getRightChild());
             candidate.setRightChild(deleteNode.getRightChild());
@@ -275,6 +274,52 @@ public class BinaryTree {
     // 빈 트리면 true, 아니면 false
     public boolean isEmpty() {
         return root == null;
+    }
+
+    //================= 트리 출력 ======================//
+    public void display() {
+        Stack<Node> globalStack = new Stack<>();
+        globalStack.push(root);
+
+        int blank = 32;
+        boolean isRowEmpty = false;
+
+        while (!isRowEmpty) {
+            Stack<Node> localStack = new Stack<>();
+            isRowEmpty = true;
+
+            for (int i = 0; i < blank; i++) {
+                System.out.print(" ");
+            }
+
+            while (!globalStack.isEmpty()) {
+                Node temp = globalStack.pop();
+
+                if (temp != null) {
+                    System.out.print(temp.getData());
+                    localStack.push(temp.getLeftChild());
+                    localStack.push(temp.getRightChild());
+
+                    if (temp.getLeftChild() != null || temp.getRightChild() != null) {
+                        isRowEmpty = false;
+                    }
+                } else {
+                    System.out.print("**");
+                    localStack.push(null);
+                    localStack.push(null);
+                }
+                for (int i = 0; i < blank * 2 - 2; i++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            blank /= 2;
+
+            while (!localStack.isEmpty()) {
+                globalStack.push(localStack.pop());
+            }
+        }
+        System.out.println();
     }
 
 }
