@@ -1,5 +1,7 @@
 package datastructure.chap12;
 
+import java.util.Scanner;
+
 // 신기한 소수 https://www.acmicpc.net/problem/2023
 public class DFS_실전문제2 {
     /*
@@ -23,7 +25,7 @@ public class DFS_실전문제2 {
          2331은 소수가 아니므로 DFS를 종료하고 2333은 소수이므로 출력합니다.
          2335, 2337은 소수가 아니므로 DFS를 종료하고 2339는 소수이므로 출력합니다.
 
-      5. 이런식으로 DFS 재귀레벨이 4가 될때가지 DFS를 반복합니다.
+      5. 이런식으로 DFS 재귀레벨이 4가 될때까지 DFS를 반복합니다.
 
 
          2    1    1    1
@@ -34,5 +36,51 @@ public class DFS_실전문제2 {
 
  */
 
+    static int N;
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        sc.close();
+
+        DFS(2, 1);
+        DFS(3, 1);
+        DFS(5, 1);
+        DFS(7, 1);
+
+    }
+
+    //-------------------메서드------------------//
+    /**
+     * DFS 메서드
+     *
+     * @param number - 소수 판별할 숫자
+     * @param level  - 재귀 깊이 레벨
+     */
+    static void DFS(int number, int level) {
+
+        if (level == N) {
+            if (isPrime(number)) {
+                System.out.println(number);
+            }
+            return;
+        }
+
+        // 자리수가 올라갈수록 홀수들만 뒤에 이어붙여서 DFS 반복 수행
+        for (int i = 1; i < 10; i += 2) {
+            int newNumber = number * 10 + i; // 자리수 증가
+            if (isPrime(newNumber)) { // 소수면 DFS 추가진행
+                DFS(newNumber, level + 1);
+            }
+        }
+    }
+
+    // 어떤 숫자가 소수인지 판별하는 메서드
+    static boolean isPrime(int num) {
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
 
 }
